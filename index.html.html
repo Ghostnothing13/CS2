@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Counter-Strike 2 — Fan Site Completo</title>
+  <meta name="description" content="Site completo sobre Counter-Strike 2: notícias, mapas, armas, dicas, campeonatos, loja de skins e galeria de imagens.">
+  <style>
+    :root{--bg:#0b1220;--card:#0f1724;--accent:#ff4d4d;--muted:#93a3b8;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,#071019 0%, #0b1220 100%);line-height:1.5}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:48px;height:48px;background:linear-gradient(135deg,#1f8fff,#6f1fff);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    .container{max-width:1200px;margin:28px auto;padding:0 18px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    h1{margin:0 0 8px;font-size:28px}
+    p.lead{color:var(--muted);margin:0 0 14px}
+    .actions{display:flex;gap:10px;margin-top:12px}
+    .btn{padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .stats{display:flex;gap:10px;margin-top:14px}
+    .stat{background:var(--glass);padding:8px 10px;border-radius:8px;color:var(--muted);font-weight:700}
+
+    .card.aside{height:300px;display:flex;flex-direction:column;justify-content:center;align-items:center;background-image:url('https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/730/header.jpg');background-size:cover;background-position:center}
+    .asidetitle{background:rgba(0,0,0,0.45);padding:10px 14px;border-radius:8px;color:white}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .map-thumb{height:160px;border-radius:10px;background-size:cover;background-position:center;position:relative;overflow:hidden}
+    .map-label{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,0.55);padding:6px 8px;border-radius:6px;color:white;font-weight:700}
+    .weapons{display:flex;gap:12px;flex-wrap:wrap}
+    .weapon{flex:1 1 30%;min-width:180px;padding:12px;background:var(--card);border-radius:10px}
+
+    .champions{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+    .champion{background:var(--card);padding:14px;border-radius:10px}
+
+    .skins{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .skin{background:var(--card);padding:14px;border-radius:10px;text-align:center}
+    .skin img{max-width:100%;border-radius:8px;margin-bottom:8px}
+    .skin button{margin-top:8px;padding:8px 12px;background:var(--accent);border:none;border-radius:6px;color:white;cursor:pointer;font-weight:700}
+
+    footer{padding:22px;text-align:center;color:var(--muted);margin-top:26px}
+
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.weapon{flex-basis:48%}.champions{grid-template-columns:1fr}.skins{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.grid3{grid-template-columns:1fr}.weapon{flex-basis:100%}.skins{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">CS2</div>
+      <div>
+        <div style="font-weight:800">Counter-Strike 2</div>
+        <div style="font-size:12px;color:var(--muted)">Fan site — notícias, mapas e dicas</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#home">Início</a>
+      <a href="#mapas">Mapas</a>
+      <a href="#armas">Armas</a>
+      <a href="#dicas">Dicas</a>
+      <a href="#campeonatos">Campeonatos</a>
+      <a href="#skins">Loja de Skins</a>
+      <a href="#galeria">Galeria</a>
+    </nav>
+  </header>
+
+  <main class="container" id="home">
+    <section class="hero">
+      <div class="card">
+        <h1>Bem-vindo ao CS2 Fan Site</h1>
+        <p class="lead">Tudo sobre o Counter-Strike 2: mapas, armas, campeonatos, skins e estratégias para evoluir no competitivo.</p>
+        <div class="actions">
+          <button class="btn btn-primary" onclick="scrollToSection('mapas')">Explorar Mapas</button>
+          <button class="btn btn-ghost" onclick="scrollToSection('dicas')">Ler Dicas</button>
+        </div>
+        <div class="stats">
+          <div class="stat">Ranked: Competitivo</div>
+          <div class="stat">Tático: 5v5</div>
+          <div class="stat">Motor: Source 2</div>
+        </div>
+      </div>
+
+      <aside class="card aside">
+        <div class="asidetitle">Últimas notícias</div>
+        <div style="color:white;margin-top:8px;max-width:340px;text-align:center;background:rgba(0,0,0,0.45);padding:8px;border-radius:8px">Nova atualização com melhorias gráficas, ajustes de balanceamento e correção de bugs.</div>
+      </aside>
+    </section>
+
+    <section id="mapas" style="margin-top:20px">
+      <h2 style="color:white;margin:0 0 10px">Mapas populares</h2>
+      <div class="grid3">
+        <div class="card">
+          <div class="map-thumb" style="background-image:url('https://files.catbox.moe/7f2bsi.jpg')">
+            <div class="map-label">Dust II</div>
+          </div>
+          <p style="color:var(--muted);margin-top:10px">Clássico absoluto, ótimo para treinar smokes e estratégias rápidas.</p>
+        </div>
+        <div class="card">
+          <div class="map-thumb" style="background-image:url('https://files.catbox.moe/eq3lre.jpg')">
+            <div class="map-label">Inferno</div>
+          </div>
+          <p style="color:var(--muted);margin-top:10px">Controle de meio e disputas em banana são essenciais.</p>
+        </div>
+        <div class="card">
+          <div class="map-thumb" style="background-image:url('https://files.catbox.moe/3y0hht.jpg')">
+            <div class="map-label">Mirage</div>
+          </div>
+          <p style="color:var(--muted);margin-top:10px">Um dos mais jogados em campeonatos devido ao equilíbrio tático.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="armas" style="margin-top:20px">
+      <h2 style="color:white;margin:0 0 10px">Armas populares</h2>
+      <div class="weapons">
+        <div class="weapon card">
+          <h3 style="margin:0 0 8px">AK-47</h3>
+          <p style="color:var(--muted);margin:0 0 8px">A arma mais icônica dos Terroristas. Um headshot é suficiente.</p>
+        </div>
+        <div class="weapon card">
+          <h3 style="margin:0 0 8px">M4A1-S / M4A4</h3>
+          <p style="color:var(--muted);margin:0 0 8px">As principais armas dos CTs. Escolha entre cadência ou precisão.</p>
+        </div>
+        <div class="weapon card">
+          <h3 style="margin:0 0 8px">AWP</h3>
+          <p style="color:var(--muted);margin:0 0 8px">O sniper mais letal do jogo. Ideal para segurar ângulos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="dicas" style="margin-top:20px">
+      <h2 style="color:white;margin:0 0 10px">Dicas para jogar melhor</h2>
+      <div class="card">
+        <ol style="color:var(--muted);padding-left:18px;margin:0">
+          <li>Treine mira diariamente em mapas de aim.</li>
+          <li>Aprenda smokes, flashes e molotovs de cada mapa.</li>
+          <li>Comunique-se com o time de forma clara e objetiva.</li>
+          <li>Controle a economia: saiba quando comprar e quando guardar.</li>
+          <li>Assista a partidas profissionais para aprender novas táticas.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="campeonatos" style="margin-top:20px">
+      <h2 style="color:white;margin:0 0 10px">Campeonatos e eSports</h2>
+      <div class="champions">
+        <div class="champion">
+          <h3 style="margin:0 0 8px">Major Championship</h3>
+          <p style="color:var(--muted);margin:0">O torneio mais prestigiado do CS2, com as melhores equipes do mundo.</p>
+        </div>
+        <div class="champion">
+          <h3 style="margin:0 0 8px">ESL Pro League</h3>
+          <p style="color:var(--muted);margin:0">Liga internacional com temporadas regulares e grandes premiações.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skins" style="margin-top:20px">
+      <h2 style="color:white;margin:0 0 10px">Loja de Skins</h2>
+      <div class="skins">
+        <div class="skin">
+          <img src="https://files.catbox.moe/yp2n5y.png" alt="AK-47 Redline">
+          <h3>AK-47 | Redline</h3>
+          <p style="color:var(--muted)">$25,00</p>
+          <button>Comprar</button>
+        </div>
+        <div class="skin">
+          <img src="https://files.catbox.moe/60n5r2.png" alt="AWP Asiimov">
+          <h3>AWP | Asiimov</h3>
+          <p style="color:var(--muted)">$120,00</p>
+          <button>Comprar</button>
+        </div>
+        <div class="skin">
+          <img src="https://files.catbox.moe/9uk9fr.png" alt="M4A4 Howl">
+          <h3>M4A4 | Howl</h3>
+          <p style="color:var(--muted)">$350,00</p>
+          <button>Comprar</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" style="margin-top:20px">
+      <h2 style="color:white;margin:0 0 10px">Galeria de imagens</h2>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <img src="https://files.catbox.moe/2k8b4m.jpg" alt="CS2 gameplay" style="width:32%;min-width:160px;border-radius:8px">
+        <img src="https://files.catbox.moe/z92l5y.jpg" alt="CS2 screenshot" style="width:32%;min-width:160px;border-radius:8px">
+        <img src="https://files.catbox.moe/5b2g45.jpg" alt="CS2 ação" style="width:32%;min-width:160px;border-radius:8px">
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="font-weight:700">CS2 Fan Site</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:6px">Feito com ❤️ — Este site é apenas para fins educativos e de fãs.</div>
+    </div>
+  </footer>
+
+  <script>
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
